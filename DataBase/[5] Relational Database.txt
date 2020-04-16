@@ -1,0 +1,18 @@
+중복된 데이터는 큰 메모리 손실을 발생시킴.
+즉, 어떤 table의 특정 column에 같은 내용이 많이 등장한다면, 내 생각에는 따로 그 내용을 저장하고,
+포인터로 가리키는 것이 메모리 손실을 줄이고, 수정 또한 편하게 할 수 있을 것 같음. 유지 보수 효율 상승!
+또한 같은 이름이지만, 다른 특성, 예를 들어 동명이인 같은 case또한 다른 참조 포인터를 사용함으로써 구분할 수 있음.
+> 하지만 이렇게 하면 table이 2개 필요함으로써, 사용자의 입장에서 직관적이지 않음.
+> 이를 해결하는 것이 relational database로서, 저장은 따로하고 showing은 한번에 하는 것임.
+
+
+table 이름 재 설정 : RENAME TABLE old_name to new_name;
+>>  ex) RENAME TABLE topic to topic_backup;
+
+분리된 table을 하나로 출력하기 : JOIN
+>> ex ) SELECT * FROM topic LEFT JOIN author ON topic.author_id = author.id;
+> topic table을 왼쪽으로 두고(LEFT) author오 join을 하는데, 그 기준은 topic의 author_id 컬럼과 author의 id 컬럼이다 라는 의미임.
+이때 projection 에서 * 이 아닌 직접 column이름을 명시하면, 두 테이블의 중복된 column_name이 있으면 오류가 발생함.
+그래서 그것을 명시하기 위해 table.column_name을 사용함.
+또한 projection 에서 table.column_name as temp_name 하면 해당 column이 temp_name으로 출력됨.
+>> ex) SELECT topic.id AS topic_id, title, descri	ption, created, name, profile FROM topic LEFT JOIN author ON topic.author_id = author.id;

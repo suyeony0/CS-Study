@@ -1,0 +1,36 @@
+Create 과 Read가 가장 중요하고, 어느 Database나 가지고 있지만,
+Update와 Delete는 Database의 목적에 따라 존재하지 않을 수도 있음. (ex: 회계 기록)
+
+table구조 확인 : DESC
+> DESC table이름;
+>> ex) DESC topic;
+
+table에 row Create하는 법 : INSERT
+> INSERT INTO table이름 (column이름들,...) 이때 auto_increment로 설정되어 있는 column은 명시 안해줘도 알아서 설정됨.
+> VALUES (columns순서대로 값들,...)
+>> ex) INSERT INTO TOPIC(title,description,created,author,profile) VALUES('mysql','mysql is ...',NOW(),'egoing','developer');
+이때 values의 값들은 문자열이므로 '' 안에 넣어주는 듯. 
+또한 datetime자료형을 가진것에 NOW()로 해주면, 현재 시간이 들어감.
+
+table read 하는 법. : SELECT
+> SELECT * FROM table이름;
+>> ex) SELECT * FROM topic;
+즉, topic이라는 테이블에서 모든(*)데이터를 선택해서 가져오라는 것임. 가져올 때, 출력 되는 듯.
+이때 *자리에 내가 출력하고 싶은 행을 명시할 수 있음.
+>> SELECT column이름들,... FROM table이름;
+>> ex) SELECT id,title,author FROM topic;
+위의 column이름 넣는 공간을 projection이라고함. 추가로 명시한 컬럼 순서대로 table이 출력됨.
+
+SELECT 에 FROM 으로 table이름을 명시하지 않으면, 새로운 table을 만들어 명시된 projection의 연산 결과를 출력함.
+> 즉, SELECT 1+1; 이렇게하면 column 이름은 1+1이고 행에 값이 2가 들어간 table이 출력됨. 
+> 문자열은 columns이름과 값이 동일하게 출력 됨.
+
+특정 table의 특정 column의 특정 값을 가진 row만 가져오기 : WHERE column_name=value; == df[df.column_name==value]
+> select projection... FROM table_name WHERE column_name=명시할 value; (문자열이면 ''사용)
+>> ex) SELECT * FROM topic WHERE author='egoing';
+
+특정 컬럼 기준 sort하기 : ORDER by column_name [DESC | ASC]; ==sort_values
+> SELECT * FROM topic WHERE author='egoing' ORDER BY id DESC;
+
+row 출력량 정하기 : LIMIT 출력량; ==pandas의 head();
+> SELECT * FROM topic WHERE author='egoing' ORDER BY id DESC LIMIT 2;

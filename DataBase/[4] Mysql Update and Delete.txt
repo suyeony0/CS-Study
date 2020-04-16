@@ -1,0 +1,8 @@
+value 수정하는 법 : UPDATE
+>UPDATE table_name SET col_name=value WHERE row_index=value; 
+>> ex) UPDATE topic SET title='MYSQL'; 하면 해당 column이 모든 value가 MYSQL이 됨.
+그러므로 마지막에 WHERE id=2; 를 하여 해당 row를 명시해줘야함. 
+
+row 삭제하는 법 : DELETE FROM table_name;
+> WHERE을 반든시 명시해야함. 안하면 table 내용 다 날라감.
+>> ex) DELETE FROM topic WHERE id=5;

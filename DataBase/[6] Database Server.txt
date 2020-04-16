@@ -1,0 +1,11 @@
+인터넷이 동작하기 위해서는 컴퓨터가 client와 server, 최소 2대가 필요함
+client가 정보를 server에 요청하면, server는 해당 정보를 client에 전달함. 
+
+이때 사용되는 관계가 web이라면, web client(web browser)와 web server가 됨.
+game이면 game client, game sever, 채팅프로그램이면 chatting clinet, chatting server.
+
+이것이 database가 되면
+database client, database server가 됨.
+
+우리가 사용하는 mysql은, 명령들은 database client인 것임! mysql monitor!
+또다른 mysql monitor 로서 GUI 환경인 mysql workbench가 있음.

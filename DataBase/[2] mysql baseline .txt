@@ -24,7 +24,7 @@ SQL 은 Structured Query Language 의 줄임말임.
 CRUD 는 Create, Read, Update, Delete의 줄임말임.
 
 DB 내에서 table 생성 명령어
-> CREATE TABLE 테이블이름(
+> CREATE TABLE 테이블이름( <= 테이블 이름 쓸 때, `을 사용해야 하는 듯, 역따옴표!
 	테이블 변수들
   id INT(11) NOT NULL AUTO_INCREMENT, <= 순서대로 id는 column 이름, INT(11)은 datatype과 숫자를 몇개까지 노출할 것인지에 대한 숫자임. 사이즈아님.
 					NOT NULL 은 무조건 값이 할당되어야 한다는 것임. AUTO_INCREMENT는 새로 추가할 때, 다음 인덱스를
