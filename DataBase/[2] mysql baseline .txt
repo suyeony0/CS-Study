@@ -1,0 +1,44 @@
+
+mysql에서는 table(표)들을 그룹화 해 놓은것을 schema(스키마)라고 함. 원래는 database라고 함. 즉 skema == database임.
+
+이런 스키마들을 저장하는 것이 데이터베이스 서버임.
+즉 mysql은 데이터베이스 서버임.
+
+데이터베이스의 강점은 보안이 뛰어나다는 것임. 파일은 OS 뚫리면 끝인데, database는 그렇지 않음.
+그리고 사용자별로 접근권한을 따로 줄 수 있음.
+
+mysql에서 데이터베이스(스키마) 생성하려면 다음 명령어를 사용하면 됨.
+> CREATE DATABASE 데이터베이스이름;
+
+스키마 삭제하려면 다음 명령어
+> DROP DATABASE 데이터베이스이름;
+
+생성되어있는 데이터베이스 출력
+> SHOW {DATABASES | SCHEMAS}
+
+데이터베이스 접근
+> USE 데이터베이스이름;
+>> 특정 DB에 접근하면 그 후 부터의 명령은 해당 DB에 대해서만 작동함.
+
+SQL 은 Structured Query Language 의 줄임말임.
+CRUD 는 Create, Read, Update, Delete의 줄임말임.
+
+DB 내에서 table 생성 명령어
+> CREATE TABLE 테이블이름(
+	테이블 변수들
+  id INT(11) NOT NULL AUTO_INCREMENT, <= 순서대로 id는 column 이름, INT(11)은 datatype과 숫자를 몇개까지 노출할 것인지에 대한 숫자임. 사이즈아님.
+					NOT NULL 은 무조건 값이 할당되어야 한다는 것임. AUTO_INCREMENT는 새로 추가할 때, 다음 인덱스를
+					자동으로 추가해줌. 
+  title VARCHAR(100) NOT NULL, <= title은 column name이고, VARCHAR는 변수 char형 이라는 것임. 이때의 100은 사이즈임. 위의 INT와 다르게. 즉 100글자 까지
+				입력 가능.
+  description TEXT NULL, <= TEXT라는 데이터타입은 65,535 개의 문자를 받을 수 있음. 
+  created DATETIME NOT NULL, <= 여기서 DATETIME은 날짜는 물론 시간 까지 표현해주는 데이터 타입임.
+  PRIMARY KEY(id) <= 이거는 프라이머리 키를 결정해 주는 것인데, 메인 키라고 생각하면 됨, 주로 search할 때 사용됨.
+  ...
+);
+
+PRIMARY KEY는 값이 중복되지 않음. 즉 hash map 에서 key값을 설정하는 것이라 생각하면 될 듯.
+
+생성된 table들 출력
+> SHOW TABLES;
+
