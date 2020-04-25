@@ -1,0 +1,1 @@
+Notice that all the right is to Stanform University - cs231n
