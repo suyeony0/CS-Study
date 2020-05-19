@@ -1,0 +1,77 @@
+<OS>
+To do :
+스케줄링
+Thrashing
+에이징
+페이징
+세그먼테이션
+가상메모리
+페이지 fault
+메모리 매니지먼트
+LRU
+
+Done :
+동기화
+공유자원 동시접근 제어
+세마포어 뮤택스
+상호배제
+메모리 계층구조
+데드락
+선점 비선점
+
+<컴퓨터 구조>
+명령어 셋 구조
+마이크로 아키텍처
+branch prediction
+파이프라이닝
+hazard
+TLB
+캐시(L1,L2)
+캐시 미스, set-associative
+슈퍼 스칼라
+태그필드
+버스 종류
+가상주소 -> 물리주소
+white policy
+
+<자료구조>
+트리 정의, 높이 
+binary, avl, red, b-tree, k-ary tree
+정렬 종류, 처리시간
+DP 정의
+-overlapping subproblem 
+스택, 큐
+리스트
+preorder
+postorder
+heap
+dfs
+bfs
+크루스칼
+프림
+그리디
+알고리즘이란
+다익스트라
+플로이드 워쉘
+해쉬
+-collision
+
+<오토마타>
+DFA NFA
+언어의 닫힘 closed
+펌핑 렘마
+레귤러 랭귀지, 그래머, 익스프레션
+CFG
+유도트리
+CFL
+CYK
+a^nb^n 각 언어에 대해서 정리
+DPDA NPDA
+회문 : palindrome  = 거꾸로 읽어도 같은 것
+>> NPDA 이용하면 읽을 수 있을 듯 
+촘스키 4계층
+- 언어들과 인식하는 도구
+결정문제, 정지문제
+튜링머신과 결정문제
+
+
